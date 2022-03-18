@@ -1,0 +1,52 @@
+{
+    "train_dataset_params": {
+        "dataset_name": "CARLA",
+        "dataset_path": "/drive/datasets/CARLA2CityScapes/images/train",
+        "sim_data_folder": "CARLA",
+        "real_data_folder": "CityScapesInput",
+        "stage": "train",
+        "loader_params": {
+            "batch_size": 1,
+            "shuffle": true,
+            "num_workers": 1,
+            "pin_memory": true
+        },
+        "input_size": [256, 256]
+    },
+    "val_dataset_params": {
+        "dataset_name": "CARLA",
+        "dataset_path": "/drive/datasets/CARLA2CityScapes/images/train",
+        "sim_data_folder": "CARLA",
+        "real_data_folder": "CityScapesInput",
+        "stage": "val",
+        "loader_params": {
+            "batch_size": 1,
+            "shuffle": false,
+            "num_workers": 1,
+            "pin_memory": true
+        },
+        "input_size": [256, 256]
+    },
+    "model_params": {
+        "model_name": "Cartoonization",
+        "is_train": true,
+        "max_epochs": 50,
+        "pretrain_epochs": 2,
+        "lr_g": 0.0002,
+        "lr_d": 0.0002,
+        "betas": [0.5, 0.99],
+        "export_path": "",
+        "checkpoint_path": "./checkpoints",
+        "load_checkpoint": -1,
+        "lr_policy": "step",
+        "lr_decay_iters": 10
+    },
+    "visualization_params": {
+        "name": "Cartoonization"
+    },
+    "visualization_params_validation": {
+        "name": "Cartoonization"
+    },
+    "printout_freq": 100,
+    "model_update_freq": 1
+}
